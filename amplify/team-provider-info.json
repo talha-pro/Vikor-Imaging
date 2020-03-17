@@ -1,0 +1,15 @@
+{
+    "develop": {
+        "awscloudformation": {
+            "AuthRoleName": "amplify-vikorimaging-develop-155239-authRole",
+            "UnauthRoleArn": "arn:aws:iam::506464813465:role/amplify-vikorimaging-develop-155239-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::506464813465:role/amplify-vikorimaging-develop-155239-authRole",
+            "Region": "us-east-1",
+            "DeploymentBucketName": "amplify-vikorimaging-develop-155239-deployment",
+            "UnauthRoleName": "amplify-vikorimaging-develop-155239-unauthRole",
+            "StackName": "amplify-vikorimaging-develop-155239",
+            "StackId": "arn:aws:cloudformation:us-east-1:506464813465:stack/amplify-vikorimaging-develop-155239/ce689920-370f-11ea-878c-0e8805686543",
+            "AmplifyAppId": "d1dzd3h8yqjeyr"
+        }
+    }
+}

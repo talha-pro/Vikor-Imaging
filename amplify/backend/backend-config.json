@@ -1,0 +1,40 @@
+{
+	"auth": {
+		"vikorimaging9cdf96ed": {
+			"service": "Cognito",
+			"providerPlugin": "awscloudformation",
+			"dependsOn": [],
+			"customAuth": false
+		}
+	},
+	"storage": {
+		"customerdatabucket": {
+			"service": "S3",
+			"providerPlugin": "awscloudformation"
+		}
+	},
+	"api": {
+		"vikorimaging": {
+			"service": "AppSync",
+			"providerPlugin": "awscloudformation",
+			"output": {
+				"authConfig": {
+					"additionalAuthenticationProviders": [],
+					"defaultAuthentication": {
+						"authenticationType": "API_KEY",
+						"apiKeyConfig": {
+							"description": "portalkey",
+							"apiKeyExpirationDays": "365"
+						}
+					}
+				}
+			}
+		}
+	},
+	"hosting": {
+		"S3AndCloudFront": {
+			"service": "S3AndCloudFront",
+			"providerPlugin": "awscloudformation"
+		}
+	}
+}

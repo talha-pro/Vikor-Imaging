@@ -1,0 +1,22 @@
+type Property @model {
+  id: ID!
+  name: String!
+  address: String!
+  owner: String!
+  photos: [Photo] @ connection(name:"PropertyPhotos")
+  panoramics: [Panoramic] @ connection(name:"PropertyPanoramics")
+}
+type Photo @model {
+  id: ID!
+  title: String!
+  property: Property @connection(name: "PropertyPhotos")
+  fullsize: String!
+  thumbnail: String!
+}
+type Panoramic @model {
+  id: ID!
+  content: String!
+  property: Property @connection(name: "PropertyPanoramics")
+  fullsize: String!
+  thumbnail: String!
+}
