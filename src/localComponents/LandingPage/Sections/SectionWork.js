@@ -1,7 +1,7 @@
+import AWS from 'aws-sdk'
 import React from 'react'
 // @material-ui/core components
 import { makeStyles } from '@material-ui/core/styles'
-
 // @material-ui/icons
 
 // core components
@@ -15,7 +15,31 @@ import workStyle from 'assets/jss/material-kit-pro-react/views/landingPageSectio
 const useStyles = makeStyles(workStyle)
 
 export default function SectionWork() {
+  const [name, setName] = React.useState()
+  const [email, setEmail] = React.useState()
+  const [message, setMessage] = React.useState()
   const classes = useStyles()
+  const submit = () => {
+    alert('submit')
+    const params = {
+      Destination: {
+        ToAddresses: ['salman292013@gmail.com'],
+      },
+      Message: {
+        Subject: {
+          Charset: 'UTF-8',
+          Data: 'Website Enquiry',
+        },
+        Body: {
+          Html: {
+            Charset: 'UTF-8',
+            Data: 'adasdasdas asdasd adasdsad',
+          },
+        },
+      },
+      Source: 'salman292013@gmail.com',
+    }
+  }
   return (
     <div className={classes.section} id="work">
       <GridContainer justify="center">
@@ -30,6 +54,14 @@ export default function SectionWork() {
                   formControlProps={{
                     fullWidth: true,
                   }}
+                  inputProps={{
+                    value: name,
+                    onChange: e => {
+                      setName(e.target.value)
+                    },
+                    name: 'name',
+                    type: 'text',
+                  }}
                 />
               </GridItem>
               <GridItem xs={12} sm={6} md={6}>
@@ -38,6 +70,14 @@ export default function SectionWork() {
                   id="email"
                   formControlProps={{
                     fullWidth: true,
+                  }}
+                  inputProps={{
+                    value: email,
+                    onChange: e => {
+                      setEmail(e.target.value)
+                    },
+                    name: 'email',
+                    type: 'text',
                   }}
                 />
               </GridItem>
@@ -49,6 +89,10 @@ export default function SectionWork() {
                   className: classes.textArea,
                 }}
                 inputProps={{
+                  value: message,
+                  onChange: e => {
+                    setMessage(e.target.value)
+                  },
                   multiline: true,
                   rows: 5,
                 }}
@@ -59,7 +103,9 @@ export default function SectionWork() {
                 md={4}
                 className={classes.mrAuto + ' ' + classes.mlAuto}
               >
-                <Button color="primary">Send Message</Button>
+                <Button onClick={submit} color="primary">
+                  Send Message
+                </Button>
               </GridItem>
             </GridContainer>
           </form>

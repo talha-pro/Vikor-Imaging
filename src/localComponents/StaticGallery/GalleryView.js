@@ -286,12 +286,12 @@ export default function GalleryView() {
         originalClass="orignal"
       /> */}
 
-      {/* <ImageGallery
+      <ImageGallery
         items={images2}
         showFullscreenButton={false}
         showPlayButton={false}
         showNav={false}
-      /> */}
+      />
       <Container>
         <ImageGallery
           items={images3}
