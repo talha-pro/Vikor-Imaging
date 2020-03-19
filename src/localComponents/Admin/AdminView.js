@@ -29,11 +29,23 @@ const useStyles = makeStyles(landingPageStyle)
 const AdminView = ({ ...rest }) => {
   const [ownerName, setOwnerName] = React.useState()
   const [propertyName, setPropertyName] = React.useState()
+  const [file, setFile] = React.useState()
+  const [imagePreviewUrl, setImagePreviewUrl] = React.useState([])
 
   const imageUpload = e => {
-    console.log(e.target.value, 'ss')
-    console.log(e.target.files, 'ss')
+    // console.log(e.target.value, 'ss')
+    // console.log(e.target.files, 'ss')
+    let reader = new FileReader()
+    let file = e.target.files[0]
+    reader.onloadend = () => {
+      setFile(file)
+      setImagePreviewUrl([...imagePreviewUrl, reader.result])
+    }
+    reader.readAsDataURL(file)
   }
+  console.log(file, 'ff')
+  console.log(imagePreviewUrl, 'img')
+
   const classes = useStyles()
   return (
     <>
@@ -142,6 +154,11 @@ const AdminView = ({ ...rest }) => {
               >
                 <div className="admin__gallery--wrapper">
                   Gallery Images Here
+                  {imagePreviewUrl &&
+                    imagePreviewUrl.length > 0 &&
+                    imagePreviewUrl.map(img => {
+                      return <img src={img} />
+                    })}
                 </div>
               </Col>
               <Col
