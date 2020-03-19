@@ -1,9 +1,15 @@
 /*eslint-disable*/
-import React from 'react'
 
+import React from 'react'
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
+import HeaderLinks from '../LandingPage/HeaderLinks'
+
+// @material-ui/icons
+
+import logo from '../../images/logo_name.png'
+import landingPageStyle from 'assets/jss/material-kit-pro-react/views/landingPageStyle.js'
 
 import { Link } from 'gatsby'
 // nodejs library that concatenates classes
@@ -22,7 +28,7 @@ import Header from 'components/Header/Header.js'
 import Footer from 'components/Footer/Footer.js'
 import GridContainer from 'components/Grid/GridContainer.js'
 import GridItem from 'components/Grid/GridItem.js'
-import HeaderLinks from 'components/Header/HeaderLinks.js'
+
 // import NavPills from "components/NavPills/NavPills.js";
 import Card from 'components/Card/Card.js'
 import CardBody from 'components/Card/CardBody.js'
@@ -51,9 +57,9 @@ import Upload from '../Upload'
 //   console.log(images);
 // }
 
-const useStyles = makeStyles(profilePageStyle)
+const useStyles = makeStyles(landingPageStyle)
 
-export default function GalleryView() {
+export default function GalleryView({ ...rest }) {
   const images = [
     {
       original:
@@ -67,6 +73,7 @@ export default function GalleryView() {
       thumbnail:
         'https://fileshare-vikor.s3.us-east-2.amazonaws.com/gallery/2_tn.jpg',
     },
+
     {
       original:
         'https://fileshare-vikor.s3.us-east-2.amazonaws.com/gallery/3.jpg',
@@ -210,48 +217,36 @@ export default function GalleryView() {
         'https://fileshare-vikor.s3.us-east-2.amazonaws.com/gallery3/2.jpg',
       thumbnail:
         'https://fileshare-vikor.s3.us-east-2.amazonaws.com/gallery3/2_tn.jpg',
-      originalClass: 'original',
-      thumbnailClass: 'thumbnail',
     },
     {
       original:
         'https://fileshare-vikor.s3.us-east-2.amazonaws.com/gallery3/3.jpg',
       thumbnail:
         'https://fileshare-vikor.s3.us-east-2.amazonaws.com/gallery3/3_tn.jpg',
-      originalClass: 'original',
-      thumbnailClass: 'thumbnail',
     },
     {
       original:
         'https://fileshare-vikor.s3.us-east-2.amazonaws.com/gallery3/4.jpg',
       thumbnail:
         'https://fileshare-vikor.s3.us-east-2.amazonaws.com/gallery3/4_tn.jpg',
-      originalClass: 'original',
-      thumbnailClass: 'thumbnail',
     },
     {
       original:
         'https://fileshare-vikor.s3.us-east-2.amazonaws.com/gallery3/5.jpg',
       thumbnail:
         'https://fileshare-vikor.s3.us-east-2.amazonaws.com/gallery3/5_tn.jpg',
-      originalClass: 'original',
-      thumbnailClass: 'thumbnail',
     },
     {
       original:
         'https://fileshare-vikor.s3.us-east-2.amazonaws.com/gallery3/7.jpg',
       thumbnail:
         'https://fileshare-vikor.s3.us-east-2.amazonaws.com/gallery3/7_tn.jpg',
-      originalClass: 'original',
-      thumbnailClass: 'thumbnail',
     },
     {
       original:
         'https://fileshare-vikor.s3.us-east-2.amazonaws.com/gallery3/8.jpg',
       thumbnail:
         'https://fileshare-vikor.s3.us-east-2.amazonaws.com/gallery3/8_tn.jpg',
-      originalClass: 'original',
-      thumbnailClass: 'thumbnail',
     },
   ]
 
@@ -264,49 +259,109 @@ export default function GalleryView() {
   )
 
   return (
-    <div>
-      <h3>Virtual Tour with Floorplan Navigation</h3>
-      <Container justify="center">
-        {/* <GridItem xs={2} sm={2} md={2}> */}
-        <div class="col">
-          <a href="https://fileshare-vikor.s3.us-east-2.amazonaws.com/iguide/index.html">
-            Click Here!
-          </a>
-        </div>
-        {/* </GridItem> */}
-
-        <h3>Sample Property Images</h3>
-      </Container>
-
-      {/* <ImageGallery
-        items={images}
-        showFullscreenButton={false}
-        showPlayButton={true}
-        showNav={false}
-        originalClass="orignal"
-      /> */}
-
-      <ImageGallery
-        items={images2}
-        showFullscreenButton={false}
-        showPlayButton={false}
-        showNav={false}
+    <>
+      <Header
+        brand={<img src={logo} alt="Vikor Imaging" />}
+        links={<HeaderLinks dropdownHoverColor="primary" />}
+        // absolute
+        {...rest}
       />
-      <Container>
-        <ImageGallery
-          items={images3}
-          showFullscreenButton={false}
-          showPlayButton={false}
-          showNav={false}
-          additionalClass="image-gallery"
-          showBullets={true}
-        />
-      </Container>
+      <div className="parallax">
+        <Parallax image={require('assets/img/bglake.jpg')} filter="dark">
+          <div className={classes.container}>
+            <GridContainer justify="center">
+              <GridItem xs={12} sm={6} md={6}>
+                <h1 className="title">Gallery</h1>
+              </GridItem>
+            </GridContainer>
+          </div>
+        </Parallax>
+      </div>
 
-      <h3>Sample Panoramic Resources</h3>
+      <div className={classNames(classes.main, classes.mainRaised)}>
+        {/* <div className={classes.container}> */}
+        <h3>Virtual Tour with Floorplan Navigation</h3>
+        <Container justify="center">
+          <GridItem xs={2} sm={2} md={2}>
+            <div class="col">
+              <a href="https://fileshare-vikor.s3.us-east-2.amazonaws.com/iguide/index.html">
+                Click Here!
+              </a>
+            </div>
+          </GridItem>
 
-      <GridContainer justify="center">
-        <GridItem xs={2} sm={2} md={2}>
+          <h3>Sample Property Images</h3>
+        </Container>
+
+        <Container>
+          {/* <Row> */}
+          <ImageGallery
+            items={images.map(image => {
+              return {
+                original: image.original,
+                thumbnail: image.thumbnail,
+                originalClass: 'original',
+                thumbnailClass: 'thumbnail',
+              }
+            })}
+            showNav={true}
+            showFullscreenButton={false}
+            showPlayButton={false}
+            renderLeftNav={(onClick, disabled) => {
+              return (
+                <button
+                  style={{ border: '1px solid red', width: 80, height: 80 }}
+                  className="left-nav"
+                  // disabled={disabled}
+                  onClick={onClick}
+                />
+              )
+            }}
+            renderRightNav={(onClick, disabled) => {
+              return (
+                <button
+                  style={{ border: '1px solid red', width: 80, height: 80 }}
+                  className="left-nav"
+                  // disabled={disabled}
+                  onClick={onClick}
+                />
+              )
+            }}
+            additionalClass="image-gallery"
+            // disableThumbnailScroll={true}
+            // showBullets={true}
+          />
+          {/* </Row> */}
+        </Container>
+        <Container>
+          <ImageGallery
+            items={images2}
+            showFullscreenButton={false}
+            showPlayButton={false}
+            showNav={false}
+            additionalClass="image-gallery"
+            // showBullets={true}
+          />
+        </Container>
+
+        {/* 
+        <Container>
+          <ImageGallery
+            items={images3}
+            showFullscreenButton={false}
+            showPlayButton={false}
+            showNav={false}
+            additionalClass="image-gallery"
+            // showBullets={true}
+          />
+        </Container> */}
+
+        <h3>Sample Panoramic Resources</h3>
+
+        <Container>
+          {/* <GridContainer justify="center"> */}
+          {/* <GridItem xs={2} sm={2} md={2}> */}
+
           <div class="col">
             <a href="https://fileshare-vikor.s3.us-east-2.amazonaws.com/P1/index.html">
               <img
@@ -316,8 +371,8 @@ export default function GalleryView() {
               />
             </a>
           </div>
-        </GridItem>
-        <GridItem xs={2} sm={2} md={2}>
+          {/* </GridItem> */}
+          {/* <GridItem xs={2} sm={2} md={2}> */}
           <div class="col">
             <a href="https://fileshare-vikor.s3.us-east-2.amazonaws.com/P2/index.html">
               <img
@@ -327,9 +382,9 @@ export default function GalleryView() {
               />
             </a>
           </div>
-        </GridItem>
+          {/* </GridItem> */}
 
-        <GridItem xs={2} sm={2} md={2}>
+          {/* <GridItem xs={2} sm={2} md={2}> */}
           <div class="col">
             <a href="https://fileshare-vikor.s3.us-east-2.amazonaws.com/P3/index.html">
               <img
@@ -339,8 +394,8 @@ export default function GalleryView() {
               />
             </a>
           </div>
-        </GridItem>
-        <GridItem xs={2} sm={2} md={2}>
+          {/* </GridItem> */}
+          {/* <GridItem xs={2} sm={2} md={2}> */}
           <div class="col">
             <a href="https://fileshare-vikor.s3.us-east-2.amazonaws.com/P4/index.html">
               <img
@@ -350,8 +405,11 @@ export default function GalleryView() {
               />
             </a>
           </div>
-        </GridItem>
-      </GridContainer>
+          {/* </GridItem> */}
+          {/* </GridContainer> */}
+          {/* </div> */}
+        </Container>
+      </div>
 
       <Footer
         content={
@@ -359,16 +417,134 @@ export default function GalleryView() {
             <div className={classes.left}>
               <List className={classes.list}>
                 <ListItem className={classes.inlineBlock}>
-                  <a href="/" target="_blank" className={classes.block}>
-                    Home
+                  <a
+                    href="https://www.creative-tim.com/license?ref=mkpr-landing"
+                    target="_blank"
+                    className={classes.block}
+                  >
+                    Privacy Policy
                   </a>
                 </ListItem>
               </List>
             </div>
-            <div className={classes.right}>Vikor Imaging</div>
+            <div className={classes.right}>
+              &copy; {1900 + new Date().getYear()}, made with{' '}
+              <Favorite className={classes.icon} /> by{' '}
+              <a href="/" target="_blank">
+                Vikor Imaging
+              </a>
+              &nbsp; All Rights Reserved
+            </div>
           </div>
         }
       />
-    </div>
+    </>
+
+    // <div>
+    //   <h3>Virtual Tour with Floorplan Navigation</h3>
+    //   <Container justify="center">
+    //     {/* <GridItem xs={2} sm={2} md={2}> */}
+    //     <div class="col">
+    //       <a href="https://fileshare-vikor.s3.us-east-2.amazonaws.com/iguide/index.html">
+    //         Click Here!
+    //       </a>
+    //     </div>
+    //     {/* </GridItem> */}
+
+    //     <h3>Sample Property Images</h3>
+    //   </Container>
+
+    //   {/* <ImageGallery
+    //     items={images}
+    //     showFullscreenButton={false}
+    //     showPlayButton={true}
+    //     showNav={false}
+    //     originalClass="orignal"
+    //   /> */}
+
+    //   {/* <ImageGallery
+    //     items={images2}
+    //     showFullscreenButton={false}
+    //     showPlayButton={false}
+    //     showNav={false}
+    //   /> */}
+    //   <Container>
+    //     <ImageGallery
+    //       items={images3}
+    //       showFullscreenButton={false}
+    //       showPlayButton={false}
+    //       showNav={false}
+    //       additionalClass="image-gallery"
+    //       showBullets={true}
+    //     />
+    //   </Container>
+
+    //   <h3>Sample Panoramic Resources</h3>
+
+    //   <GridContainer justify="center">
+    //     <GridItem xs={2} sm={2} md={2}>
+    //       <div class="col">
+    //         <a href="https://fileshare-vikor.s3.us-east-2.amazonaws.com/P1/index.html">
+    //           <img
+    //             src={
+    //               'https://fileshare-vikor.s3.us-east-2.amazonaws.com/thumbs/1.jpg'
+    //             }
+    //           />
+    //         </a>
+    //       </div>
+    //     </GridItem>
+    //     <GridItem xs={2} sm={2} md={2}>
+    //       <div class="col">
+    //         <a href="https://fileshare-vikor.s3.us-east-2.amazonaws.com/P2/index.html">
+    //           <img
+    //             src={
+    //               'https://fileshare-vikor.s3.us-east-2.amazonaws.com/thumbs/2f.jpg'
+    //             }
+    //           />
+    //         </a>
+    //       </div>
+    //     </GridItem>
+
+    //     <GridItem xs={2} sm={2} md={2}>
+    //       <div class="col">
+    //         <a href="https://fileshare-vikor.s3.us-east-2.amazonaws.com/P3/index.html">
+    //           <img
+    //             src={
+    //               'https://fileshare-vikor.s3.us-east-2.amazonaws.com/thumbs/3tf.jpg'
+    //             }
+    //           />
+    //         </a>
+    //       </div>
+    //     </GridItem>
+    //     <GridItem xs={2} sm={2} md={2}>
+    //       <div class="col">
+    //         <a href="https://fileshare-vikor.s3.us-east-2.amazonaws.com/P4/index.html">
+    //           <img
+    //             src={
+    //               'https://fileshare-vikor.s3.us-east-2.amazonaws.com/thumbs/4tn.jpg'
+    //             }
+    //           />
+    //         </a>
+    //       </div>
+    //     </GridItem>
+    //   </GridContainer>
+
+    //   <Footer
+    //     content={
+    //       <div>
+    //         <div className={classes.left}>
+    //           <List className={classes.list}>
+    //             <ListItem className={classes.inlineBlock}>
+    //               <a href="/" target="_blank" className={classes.block}>
+    //                 Home
+    //               </a>
+    //             </ListItem>
+    //           </List>
+    //         </div>
+    //         <div className={classes.right}>Vikor Imaging</div>
+    //       </div>
+    //     }
+    //   />
+    // </div>
   )
 }

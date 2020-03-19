@@ -9,8 +9,7 @@
   // border: 1px solid red;
 
   &__container {
-    // border: 1px solid red;
-    margin: 5rem 0rem;
+    margin: 2rem 0rem;
   }
 
   &__row--heading {
@@ -34,27 +33,48 @@
     justify-content: center;
     align-items: center;
     width: 70%;
-    padding: 5rem;
-    transform: translateY(7rem);
+
+    transform: translateY(1.2rem);
     border-radius: 0.5rem;
     // border: 1px solid red;
     background: linear-gradient(60deg, #ffca67, #956b00);
     box-shadow: 0 12px 20px -10px rgba(202, 153, 50, 0.28),
       0 4px 20px 0px rgba(0, 0, 0, 0.12), 0 7px 8px -5px rgba(202, 153, 50, 0.2);
     color: white;
-    font-size: 2.5rem;
+    font-size: 1.5rem;
     font-weight: 700;
     font-family: 'Roboto Slab', serif !important;
+
+    @media (max-width: 576px) {
+      padding: 1rem;
+      font-size: 1rem;
+    }
+
+    @media (min-width: 576px) {
+      padding: 2rem;
+      font-size: 1rem;
+    }
+
+    @media (min-width: 768px) {
+      padding: 2.5rem;
+      font-size: 1.2rem;
+    }
+
+    @media (min-width: 992px) {
+      padding: 2.5rem;
+      font-size: 1.5rem;
+    }
   }
 
   &__row--content {
-    margin-top: 5rem;
+    // margin-top: 5rem;
     // border: 1.5px solid $primary;
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
     // box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
     // box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
     border-radius: 0.5rem;
     // background-color: $primary;
+
     color: black;
   }
 
@@ -63,26 +83,69 @@
     flex-flow: column;
     justify-content: center;
     align-items: center;
-    padding: 4rem;
   }
 
   &__column--services--heading {
-    font-size: 1.8rem;
+    // font-size: 1.1rem;
     font-weight: 700;
     color: $primary;
     font-family: 'Roboto Slab', serif !important;
     // color: white;
+
+    @media (max-width: 576px) {
+      font-size: 0.6rem;
+    }
+
+    @media (min-width: 576px) {
+      font-size: 0.6rem;
+    }
+
+    @media (min-width: 768px) {
+      font-size: 0.8rem;
+    }
+
+    @media (min-width: 992px) {
+      font-size: 1.1rem;
+    }
   }
 
   &__column--services--item {
     font-family: 'Roboto', sans-serif !important;
-    font-size: 1.6rem;
+    // font-size: 1rem;
     font-weight: 300;
-    text-align: center;
-    width: 90%;
-    padding: 10px;
+
+    padding: 0.3rem;
+    // padding: 10px;
     border-bottom: 0.5px solid rgba($primary, 0.6);
     // border-bottom: 0.5px solid rgba(white, 0.6);
+
+    @media (max-width: 350px) {
+      width: 180%;
+      font-size: 0.6rem;
+    }
+    @media (min-width: 350px) {
+      width: 150%;
+      font-size: 0.6rem;
+    }
+
+    @media (min-width: 434px) {
+      width: 130%;
+      text-align: center;
+      font-size: 0.6rem;
+    }
+
+    @media (min-width: 576px) {
+      width: 100%;
+      font-size: 0.6rem;
+    }
+
+    @media (min-width: 768px) {
+      font-size: 0.8rem;
+    }
+
+    @media (min-width: 992px) {
+      font-size: 1rem;
+    }
   }
 
   &__column--content {
@@ -90,26 +153,69 @@
     flex-flow: column;
     justify-content: center;
     align-items: center;
-    padding: 4rem;
+
+    // padding: 3rem;
   }
 
   &__column--content--heading {
-    font-size: 1.8rem;
+    // font-size: 1.1rem;
     font-weight: 700;
     color: $primary;
     font-family: 'Roboto Slab', serif !important;
     // color: white;
+    @media (max-width: 576px) {
+      font-size: 0.6rem;
+    }
+
+    @media (min-width: 576px) {
+      font-size: 0.6rem;
+    }
+
+    @media (min-width: 768px) {
+      font-size: 0.8rem;
+    }
+
+    @media (min-width: 992px) {
+      font-size: 1.1rem;
+    }
   }
 
   &__column--content--item {
+    // border: 1px solid red;
     font-family: 'Roboto', sans-serif !important;
-    font-size: 1.6rem;
+    // font-size: 1rem;
     font-weight: 300;
-    text-align: center;
-    width: 90%;
-    padding: 10px;
+
+    padding: 0.3rem;
     border-bottom: 0.5px solid rgba($primary, 0.6);
     // border-bottom: 0.5px solid rgba(white, 0.6);
+    @media (max-width: 350px) {
+      width: 180%;
+      font-size: 0.6rem;
+    }
+    @media (min-width: 350px) {
+      width: 140%;
+      font-size: 0.6rem;
+    }
+
+    @media (min-width: 434px) {
+      width: 130%;
+      text-align: center;
+      font-size: 0.6rem;
+    }
+
+    @media (min-width: 576px) {
+      width: 100%;
+      font-size: 0.6rem;
+    }
+
+    @media (min-width: 768px) {
+      font-size: 0.8rem;
+    }
+
+    @media (min-width: 992px) {
+      font-size: 1rem;
+    }
   }
 
   &__column--price {
@@ -117,16 +223,32 @@
     flex-flow: column;
     justify-content: center;
     align-items: center;
-    padding: 4rem;
+    padding: 3rem;
     // border: 1px solid green;
   }
 
   &__column--price--heading {
-    font-size: 1.8rem;
+    // font-size: 1.1rem;
     font-weight: 700;
     color: $primary;
     font-family: 'Roboto Slab', serif !important;
     // color: white;
+
+    @media (max-width: 576px) {
+      font-size: 0.6rem;
+    }
+
+    @media (min-width: 576px) {
+      font-size: 0.6rem;
+    }
+
+    @media (min-width: 768px) {
+      font-size: 0.8rem;
+    }
+
+    @media (min-width: 992px) {
+      font-size: 1.1rem;
+    }
   }
 
   &__column--price--item--wrapper {
@@ -144,22 +266,69 @@
 
   &__column--price--item {
     font-family: 'Roboto', sans-serif !important;
-    font-size: 1.6rem;
+    // font-size: 1rem;
     font-weight: 300;
     text-align: center;
     width: 100%;
-    padding: 10px;
+    padding: 0.3rem;
     border-bottom: 0.5px solid rgba($primary, 0.6);
     // border-bottom: 0.5px solid rgba(white, 0.6);
+
+    @media (max-width: 576px) {
+      font-size: 0.6rem;
+    }
+
+    @media (min-width: 576px) {
+      font-size: 0.6rem;
+    }
+
+    @media (min-width: 768px) {
+      font-size: 0.8rem;
+    }
+
+    @media (min-width: 992px) {
+      font-size: 1rem;
+    }
   }
 
   &__dollar {
-    font-size: 1.5rem;
+    // font-size: 1.2rem;
     font-weight: 400;
+    @media (max-width: 576px) {
+      font-size: 0.6rem;
+    }
+
+    @media (min-width: 576px) {
+      font-size: 0.6rem;
+    }
+
+    @media (min-width: 768px) {
+      font-size: 0.8rem;
+    }
+
+    @media (min-width: 992px) {
+      font-size: 1rem;
+    }
   }
 
   &__text {
-    font-size: 1rem;
+    // font-size: 0.8rem;
     font-weight: 400;
+
+    @media (max-width: 576px) {
+      font-size: 0.6rem;
+    }
+
+    @media (min-width: 576px) {
+      font-size: 0.6rem;
+    }
+
+    @media (min-width: 768px) {
+      font-size: 0.8rem;
+    }
+
+    @media (min-width: 992px) {
+      font-size: 0.8rem;
+    }
   }
 }

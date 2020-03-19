@@ -9,18 +9,43 @@ import Footer from 'components/Footer/Footer.js'
 import HeaderLinks from '../LandingPage/HeaderLinks'
 import List from '@material-ui/core/List'
 import ListItem from '@material-ui/core/ListItem'
+import GridContainer from 'components/Grid/GridContainer.js'
+import GridItem from 'components/Grid/GridItem.js'
 // @material-ui/icons
+import Select from '@material-ui/core/Select'
 import Favorite from '@material-ui/icons/Favorite'
 import logo from '../../images/logo_name.png'
 import { makeStyles } from '@material-ui/core/styles'
 import landingPageStyle from 'assets/jss/material-kit-pro-react/views/landingPageStyle.js'
 import Parallax from 'components/Parallax/Parallax.js'
-
+import InputLabel from '@material-ui/core/InputLabel'
+import MenuItem from '@material-ui/core/MenuItem'
+import FormHelperText from '@material-ui/core/FormHelperText'
+import FormControl from '@material-ui/core/FormControl'
 // import CustomDropdown from 'components/CustomDropdown/CustomDropdown'
 
 const useStyles = makeStyles(landingPageStyle)
 
 const AdminView = ({ ...rest }) => {
+  const [ownerName, setOwnerName] = React.useState()
+  const [propertyName, setPropertyName] = React.useState()
+  const [file, setFile] = React.useState()
+  const [imagePreviewUrl, setImagePreviewUrl] = React.useState([])
+
+  const imageUpload = e => {
+    // console.log(e.target.value, 'ss')
+    // console.log(e.target.files, 'ss')
+    let reader = new FileReader()
+    let file = e.target.files[0]
+    reader.onloadend = () => {
+      setFile(file)
+      setImagePreviewUrl([...imagePreviewUrl, reader.result])
+    }
+    reader.readAsDataURL(file)
+  }
+  console.log(file, 'ff')
+  console.log(imagePreviewUrl, 'img')
+
   const classes = useStyles()
   return (
     <>
@@ -30,58 +55,129 @@ const AdminView = ({ ...rest }) => {
         // absolute
         {...rest}
       />
-      <Parallax image={require('assets/img/bglake.jpg')} filter="dark">
-        <div className={classes.container}>
-          <h1 className={classes.title}>Admin Panel</h1>
-        </div>
-      </Parallax>
+      <div className="parallax">
+        <Parallax image={require('assets/img/bglake.jpg')} filter="dark">
+          <div className={classes.container}>
+            <GridContainer justify="center">
+              <GridItem xs={12} sm={6} md={6}>
+                <h1 className="title">Admin Panel</h1>
+              </GridItem>
+            </GridContainer>
+          </div>
+        </Parallax>
+      </div>
       <div className={classNames(classes.main, classes.mainRaised)}>
         {/* <div className={classes.container}> */}
         <section className="admin">
           <Container fluid={true} className="admin__container">
             <Row className="admin__row--upper">
-              <Col lg={3} xl={3} className="admin__column--left">
+              <Col sm={12} md={3} lg={3} xl={3} className="admin__column--left">
                 <div className="admin__save-changes">
                   <div className="admin__changes-button">Save Changes</div>
                 </div>
               </Col>
-              <Col lg={6} xl={6} className="admin__column--middle">
+              <Col
+                sm={12}
+                md={6}
+                lg={6}
+                xl={6}
+                className="admin__column--middle"
+              >
                 <div className="admin__dropdown--wrapper">
                   <div className="admin__dropdown--title">Owner</div>
-                  <div className="admin__dropdown">Dropdown Here</div>
+                  {/* <div className="admin__dropdown"> */}
+                  <FormControl className="admin__dropdown--form-control">
+                    <Select
+                      className="admin__dropdown--select"
+                      labelId="demo-simple-select-disabled-label"
+                      id="demo-simple-select-disabled"
+                      value={ownerName}
+                      onChange={e => setOwnerName(e.target.value)}
+                    >
+                      <MenuItem value="isaac">Isaac</MenuItem>
+                      <MenuItem value="lance">Lance</MenuItem>
+                      <MenuItem value="chris">Chris</MenuItem>
+                      <MenuItem value="aaron">Aaron</MenuItem>
+                    </Select>
+                  </FormControl>
+                  {/* </div> */}
                 </div>
                 <div className="admin__dropdown--wrapper">
                   <div className="admin__dropdown--title">Property</div>
-                  <div className="admin__dropdown">Dropdown Here</div>
+                  {/* <div className="admin__dropdown"> */}
+                  <FormControl className="admin__dropdown--form-control">
+                    <Select
+                      className="admin__dropdown--select"
+                      labelId="demo-simple-select-disabled-label"
+                      id="demo-simple-select-disabled"
+                      value={propertyName}
+                      onChange={e => setPropertyName(e.target.value)}
+                    >
+                      <MenuItem value="studio">Studio</MenuItem>
+                      <MenuItem value="farm">Farm House</MenuItem>
+                      <MenuItem value="shop">Shop</MenuItem>
+                    </Select>
+                  </FormControl>
+                  {/* </div> */}
                 </div>
                 <div className="admin__dropdown--wrapper">
-                  <div className="admin__dropdown--title">Upload</div>
-                  <div className="admin__dropdown">Dropdown Here</div>
+                  <div className="admin__dropdown--title">Select</div>
+                  <input
+                    className="admin__select-button"
+                    type="file"
+                    name="image"
+                    multiple="multiple"
+                    onChange={imageUpload}
+                  />
                 </div>
               </Col>
-              <Col lg={3} xl={3} className="admin__column--right">
+              <Col
+                sm={12}
+                md={3}
+                lg={3}
+                xl={3}
+                className="admin__column--right"
+              >
                 <div className="admin__upload">
                   <div className="admin__upload-button">Upload</div>
+                  <div className="admin__property-button">New Property</div>
                 </div>
               </Col>
             </Row>
             <Row className="admin__row--lower">
-              <Col className="admin__column__lower--left" lg={8} xl={8}>
+              <Col
+                className="admin__column__lower--left"
+                sm={12}
+                md={8}
+                lg={8}
+                xl={8}
+              >
                 <div className="admin__gallery--wrapper">
                   Gallery Images Here
+                  {imagePreviewUrl &&
+                    imagePreviewUrl.length > 0 &&
+                    imagePreviewUrl.map(img => {
+                      return <img src={img} />
+                    })}
                 </div>
               </Col>
-              <Col className="admin__column__lower--right" lg={4} xl={4}>
+              <Col
+                className="admin__column__lower--right"
+                sm={12}
+                md={4}
+                lg={4}
+                xl={4}
+              >
                 <div className="admin__property__form--wrapper">
                   <div className="admin__default-image">Default Image</div>
                   <form className="admin__form">
                     <input
                       className="admin__input"
-                      placeholder="Title of Property"
+                      placeholder="Owner of Property"
                     ></input>
                     <input
                       className="admin__input"
-                      placeholder="Owner of Property"
+                      placeholder="Title of Property"
                     ></input>
                   </form>
                   <div className="admin__change-default--wrapper">

@@ -1,6 +1,7 @@
 /*eslint-disable*/
 import React from 'react'
 import { Link } from 'gatsby'
+
 // nodejs library that concatenates classes
 import classNames from 'classnames'
 // @material-ui/core components
@@ -17,7 +18,8 @@ import Header from 'components/Header/Header.js'
 import Footer from 'components/Footer/Footer.js'
 import GridContainer from 'components/Grid/GridContainer.js'
 import GridItem from 'components/Grid/GridItem.js'
-import HeaderLinks from 'components/Header/HeaderLinks.js'
+// import HeaderLinks from 'components/Header/HeaderLinks.js'
+import HeaderLinks from '../LandingPage/HeaderLinks'
 // import NavPills from "components/NavPills/NavPills.js";
 import Card from 'components/Card/Card.js'
 import CardBody from 'components/Card/CardBody.js'
@@ -31,7 +33,8 @@ import sampleImage from 'assets/img/faces/christian.jpg'
 import { navigate } from '@reach/router'
 import profilePageStyle from 'assets/jss/material-kit-pro-react/views/profilePageStyle.js'
 import Admin from '../Admin'
-import Masonry, { Tile } from './Masonry'
+import logo from '../../images/logo_name.png'
+// import Masonry, { Tile } from './Masonry'
 
 import Upload from '../Upload'
 
@@ -47,7 +50,7 @@ for (let i = 0; i < imgId.length; i++) {
 
 const useStyles = makeStyles(profilePageStyle)
 
-export default function ProfilePage({ data }) {
+export default function ProfilePage({ data, ...rest }) {
   React.useEffect(() => {
     window.scrollTo(0, 0)
     document.body.scrollTop = 0
@@ -62,12 +65,20 @@ export default function ProfilePage({ data }) {
 
   const navImageClasses = classNames(classes.imgRounded, classes.imgGallery)
   return (
-    <div>
-      <Parallax
-        //image={require('assets/img/examples/city.jpg')}
-        filter="dark"
-        className={classes.parallax}
-      />
+    <>
+      {/* <Header
+        brand={<img src={logo} alt="Vikor Imaging" />}
+        links={<HeaderLinks dropdownHoverColor="primary" />}
+        // absolute
+        {...rest}
+      /> */}
+      <div className="parallax">
+        <Parallax
+          //image={require('assets/img/examples/city.jpg')}
+          filter="dark"
+          className={classes.parallax}
+        />
+      </div>
       <div className={classNames(classes.main, classes.mainRaised)}>
         <div className={classes.container}>
           <GridContainer justify="center">
@@ -101,34 +112,61 @@ export default function ProfilePage({ data }) {
             </GridItem>
           </GridContainer>
           <div className={classNames(classes.textCenter)}>
+            <Link to="/app/admin">
+              <div className="admin-button-wrapper">
+                <div className="admin-panel-button">Admin Panel</div>
+              </div>
+            </Link>
             <h4>Property List</h4>
           </div>
-          {/* <Masonry brakePoints={[350, 500, 750]}>
-            {data.map(item => { if(item.owner === user.username){
-              
-              return (
-                <Link to="/app/property" state={{ item }} key={item.id}>
-                  <div className="tile">
-                    <img
-                      width={250}
-                      src={
-                        item.photos.items.length
-                          ? item.photos.items[0].fullsize
-                          : images[0]
-                      }
-                    />
-                    <h4>{item.address}</h4>
-                  </div>
-                </Link>
-              )
-            }
+          {/* <Masonry brakePoints={[350, 500, 750]}> */}
+          <div className="properties">
+            {data.map(item => {
+              if (item.owner === user.username) {
+                return (
+                  <Link to="/app/property" state={{ item }} key={item.id}>
+                    <div className="tile">
+                      <img
+                        className="tile__image-primary"
+                        // width={270}
+                        // height={200}
+                        src={
+                          item.photos.items.length
+                            ? item.photos.items[0].fullsize
+                            : images[0]
+                        }
+                      />
+                      <img
+                        className="tile__image-secondary"
+                        // width={265}
+                        // height={200}
+                        src={
+                          item.photos.items.length
+                            ? item.photos.items[0].fullsize
+                            : images[0]
+                        }
+                      />
+                      <h4 className="tile__address">{item.address}</h4>
+                      {/* <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                        sed do eiusmod tempor incididunt ut labore et dolore
+                        magna aliqua. Ut enim ad minim veniam, quis nostrud
+                        exercitation ullamco laboris nisi ut aliquip ex ea
+                        commodo consequat. Duis aute irure dolor in
+                        reprehenderit in voluptate velit esse cillum dolore eu
+                        fugiat nulla pariatur. Excepteur sint occaecat cupidatat
+                        non proident, sunt in culpa qui officia deserunt mollit
+                        anim id est laborum.
+                      </p> */}
+                    </div>
+                  </Link>
+                )
+              }
             })}
-          </Masonry> */}
-          <Clearfix />
+          </div>
+          {/* </Masonry> */}
+          {/* <Clearfix /> */}
         </div>
-        <Link to="/app/admin">
-          <a>Admin Panel</a>
-        </Link>
       </div>
       <Footer
         content={
@@ -157,6 +195,6 @@ export default function ProfilePage({ data }) {
           </div>
         }
       />
-    </div>
+    </>
   )
 }
