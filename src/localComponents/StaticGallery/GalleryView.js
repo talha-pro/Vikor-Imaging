@@ -66,16 +66,12 @@ export default function GalleryView({ ...rest }) {
         'https://fileshare-vikor.s3.us-east-2.amazonaws.com/gallery/1.jpg',
       thumbnail:
         'https://fileshare-vikor.s3.us-east-2.amazonaws.com/gallery/1_tn.jpg',
-      originalClass: 'original',
-      thumbnailClass: 'thumbnail',
     },
     {
       original:
         'https://fileshare-vikor.s3.us-east-2.amazonaws.com/gallery/2.jpg',
       thumbnail:
         'https://fileshare-vikor.s3.us-east-2.amazonaws.com/gallery/2_tn.jpg',
-      originalClass: 'original',
-      thumbnailClass: 'thumbnail',
     },
 
     {
@@ -83,80 +79,60 @@ export default function GalleryView({ ...rest }) {
         'https://fileshare-vikor.s3.us-east-2.amazonaws.com/gallery/3.jpg',
       thumbnail:
         'https://fileshare-vikor.s3.us-east-2.amazonaws.com/gallery/3_tn.jpg',
-      originalClass: 'original',
-      thumbnailClass: 'thumbnail',
     },
     {
       original:
         'https://fileshare-vikor.s3.us-east-2.amazonaws.com/gallery/4.jpg',
       thumbnail:
         'https://fileshare-vikor.s3.us-east-2.amazonaws.com/gallery/4_tn.jpg',
-      originalClass: 'original',
-      thumbnailClass: 'thumbnail',
     },
     {
       original:
         'https://fileshare-vikor.s3.us-east-2.amazonaws.com/gallery/5.jpg',
       thumbnail:
         'https://fileshare-vikor.s3.us-east-2.amazonaws.com/gallery/5_tn.jpg',
-      originalClass: 'original',
-      thumbnailClass: 'thumbnail',
     },
     {
       original:
         'https://fileshare-vikor.s3.us-east-2.amazonaws.com/gallery/6.jpg',
       thumbnail:
         'https://fileshare-vikor.s3.us-east-2.amazonaws.com/gallery/6_tn.jpg',
-      originalClass: 'original',
-      thumbnailClass: 'thumbnail',
     },
     {
       original:
         'https://fileshare-vikor.s3.us-east-2.amazonaws.com/gallery/7.jpg',
       thumbnail:
         'https://fileshare-vikor.s3.us-east-2.amazonaws.com/gallery/7_tn.jpg',
-      originalClass: 'original',
-      thumbnailClass: 'thumbnail',
     },
     {
       original:
         'https://fileshare-vikor.s3.us-east-2.amazonaws.com/gallery/8.jpg',
       thumbnail:
         'https://fileshare-vikor.s3.us-east-2.amazonaws.com/gallery/8_tn.jpg',
-      originalClass: 'original',
-      thumbnailClass: 'thumbnail',
     },
     {
       original:
         'https://fileshare-vikor.s3.us-east-2.amazonaws.com/gallery/11.jpg',
       thumbnail:
         'https://fileshare-vikor.s3.us-east-2.amazonaws.com/gallery/11_tn.jpg',
-      originalClass: 'original',
-      thumbnailClass: 'thumbnail',
     },
     {
       original:
         'https://fileshare-vikor.s3.us-east-2.amazonaws.com/gallery/13.jpg',
       thumbnail:
         'https://fileshare-vikor.s3.us-east-2.amazonaws.com/gallery/13_tn.jpg',
-      originalClass: 'original',
-      thumbnailClass: 'thumbnail',
     },
     {
       original:
         'https://fileshare-vikor.s3.us-east-2.amazonaws.com/gallery/14.jpg',
       thumbnail:
         'https://fileshare-vikor.s3.us-east-2.amazonaws.com/gallery/14_tn.jpg',
-      originalClass: 'original',
-      thumbnailClass: 'thumbnail',
     },
     {
       original:
         'https://fileshare-vikor.s3.us-east-2.amazonaws.com/gallery/15.jpg',
       thumbnail:
         'https://fileshare-vikor.s3.us-east-2.amazonaws.com/gallery/15_tn.jpg',
-      originalClass: 'original',
-      thumbnailClass: 'thumbnail',
     },
   ]
 
@@ -166,96 +142,72 @@ export default function GalleryView({ ...rest }) {
         'https://fileshare-vikor.s3.us-east-2.amazonaws.com/gallery2/1.jpg',
       thumbnail:
         'https://fileshare-vikor.s3.us-east-2.amazonaws.com/gallery2/1_tn.jpg',
-      originalClass: 'original',
-      thumbnailClass: 'thumbnail',
     },
     {
       original:
         'https://fileshare-vikor.s3.us-east-2.amazonaws.com/gallery2/2.jpg',
       thumbnail:
         'https://fileshare-vikor.s3.us-east-2.amazonaws.com/gallery2/2_tn.jpg',
-      originalClass: 'original',
-      thumbnailClass: 'thumbnail',
     },
     {
       original:
         'https://fileshare-vikor.s3.us-east-2.amazonaws.com/gallery2/3.jpg',
       thumbnail:
         'https://fileshare-vikor.s3.us-east-2.amazonaws.com/gallery2/3_tn.jpg',
-      originalClass: 'original',
-      thumbnailClass: 'thumbnail',
     },
     {
       original:
         'https://fileshare-vikor.s3.us-east-2.amazonaws.com/gallery2/4.jpg',
       thumbnail:
         'https://fileshare-vikor.s3.us-east-2.amazonaws.com/gallery2/4_tn.jpg',
-      originalClass: 'original',
-      thumbnailClass: 'thumbnail',
     },
     {
       original:
         'https://fileshare-vikor.s3.us-east-2.amazonaws.com/gallery2/5.jpg',
       thumbnail:
         'https://fileshare-vikor.s3.us-east-2.amazonaws.com/gallery2/5_tn.jpg',
-      originalClass: 'original',
-      thumbnailClass: 'thumbnail',
     },
     {
       original:
         'https://fileshare-vikor.s3.us-east-2.amazonaws.com/gallery2/6.jpg',
       thumbnail:
         'https://fileshare-vikor.s3.us-east-2.amazonaws.com/gallery2/6_tn.jpg',
-      originalClass: 'original',
-      thumbnailClass: 'thumbnail',
     },
     {
       original:
         'https://fileshare-vikor.s3.us-east-2.amazonaws.com/gallery2/7.jpg',
       thumbnail:
         'https://fileshare-vikor.s3.us-east-2.amazonaws.com/gallery2/7_tn.jpg',
-      originalClass: 'original',
-      thumbnailClass: 'thumbnail',
     },
     {
       original:
         'https://fileshare-vikor.s3.us-east-2.amazonaws.com/gallery2/8.jpg',
       thumbnail:
         'https://fileshare-vikor.s3.us-east-2.amazonaws.com/gallery2/8_tn.jpg',
-      originalClass: 'original',
-      thumbnailClass: 'thumbnail',
     },
     {
       original:
         'https://fileshare-vikor.s3.us-east-2.amazonaws.com/gallery2/9.jpg',
       thumbnail:
         'https://fileshare-vikor.s3.us-east-2.amazonaws.com/gallery2/9_tn.jpg',
-      originalClass: 'original',
-      thumbnailClass: 'thumbnail',
     },
     {
       original:
         'https://fileshare-vikor.s3.us-east-2.amazonaws.com/gallery2/11.jpg',
       thumbnail:
         'https://fileshare-vikor.s3.us-east-2.amazonaws.com/gallery2/11_tn.jpg',
-      originalClass: 'original',
-      thumbnailClass: 'thumbnail',
     },
     {
       original:
         'https://fileshare-vikor.s3.us-east-2.amazonaws.com/gallery2/12.jpg',
       thumbnail:
         'https://fileshare-vikor.s3.us-east-2.amazonaws.com/gallery2/12_tn.jpg',
-      originalClass: 'original',
-      thumbnailClass: 'thumbnail',
     },
     {
       original:
         'https://fileshare-vikor.s3.us-east-2.amazonaws.com/gallery2/13.jpg',
       thumbnail:
         'https://fileshare-vikor.s3.us-east-2.amazonaws.com/gallery2/13_tn.jpg',
-      originalClass: 'original',
-      thumbnailClass: 'thumbnail',
     },
   ]
 
@@ -265,48 +217,36 @@ export default function GalleryView({ ...rest }) {
         'https://fileshare-vikor.s3.us-east-2.amazonaws.com/gallery3/2.jpg',
       thumbnail:
         'https://fileshare-vikor.s3.us-east-2.amazonaws.com/gallery3/2_tn.jpg',
-      originalClass: 'original',
-      thumbnailClass: 'thumbnail',
     },
     {
       original:
         'https://fileshare-vikor.s3.us-east-2.amazonaws.com/gallery3/3.jpg',
       thumbnail:
         'https://fileshare-vikor.s3.us-east-2.amazonaws.com/gallery3/3_tn.jpg',
-      originalClass: 'original',
-      thumbnailClass: 'thumbnail',
     },
     {
       original:
         'https://fileshare-vikor.s3.us-east-2.amazonaws.com/gallery3/4.jpg',
       thumbnail:
         'https://fileshare-vikor.s3.us-east-2.amazonaws.com/gallery3/4_tn.jpg',
-      originalClass: 'original',
-      thumbnailClass: 'thumbnail',
     },
     {
       original:
         'https://fileshare-vikor.s3.us-east-2.amazonaws.com/gallery3/5.jpg',
       thumbnail:
         'https://fileshare-vikor.s3.us-east-2.amazonaws.com/gallery3/5_tn.jpg',
-      originalClass: 'original',
-      thumbnailClass: 'thumbnail',
     },
     {
       original:
         'https://fileshare-vikor.s3.us-east-2.amazonaws.com/gallery3/7.jpg',
       thumbnail:
         'https://fileshare-vikor.s3.us-east-2.amazonaws.com/gallery3/7_tn.jpg',
-      originalClass: 'original',
-      thumbnailClass: 'thumbnail',
     },
     {
       original:
         'https://fileshare-vikor.s3.us-east-2.amazonaws.com/gallery3/8.jpg',
       thumbnail:
         'https://fileshare-vikor.s3.us-east-2.amazonaws.com/gallery3/8_tn.jpg',
-      originalClass: 'original',
-      thumbnailClass: 'thumbnail',
     },
   ]
 
@@ -317,10 +257,6 @@ export default function GalleryView({ ...rest }) {
     classes.imgFluid,
     classes.inlineBlock
   )
-
-  function renderLeftNav(onClick, disabled) {
-    return <button className="left-nav" disabled={disabled} onClick={onClick} />
-  }
 
   return (
     <>
@@ -360,19 +296,44 @@ export default function GalleryView({ ...rest }) {
         <Container>
           {/* <Row> */}
           <ImageGallery
-            items={images}
+            items={images.map(image => {
+              return {
+                original: image.original,
+                thumbnail: image.thumbnail,
+                originalClass: 'original',
+                thumbnailClass: 'thumbnail',
+              }
+            })}
+            showNav={true}
             showFullscreenButton={false}
             showPlayButton={false}
-            showNav={false}
-            renderLeftNav={renderLeftNav}
+            renderLeftNav={(onClick, disabled) => {
+              return (
+                <button
+                  style={{ border: '1px solid red', width: 80, height: 80 }}
+                  className="left-nav"
+                  // disabled={disabled}
+                  onClick={onClick}
+                />
+              )
+            }}
+            renderRightNav={(onClick, disabled) => {
+              return (
+                <button
+                  style={{ border: '1px solid red', width: 80, height: 80 }}
+                  className="left-nav"
+                  // disabled={disabled}
+                  onClick={onClick}
+                />
+              )
+            }}
             additionalClass="image-gallery"
             // disableThumbnailScroll={true}
             // showBullets={true}
           />
           {/* </Row> */}
         </Container>
-
-        {/* <Container>
+        <Container>
           <ImageGallery
             items={images2}
             showFullscreenButton={false}
@@ -383,6 +344,7 @@ export default function GalleryView({ ...rest }) {
           />
         </Container>
 
+        {/* 
         <Container>
           <ImageGallery
             items={images3}
