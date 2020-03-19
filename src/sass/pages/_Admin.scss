@@ -1,6 +1,6 @@
 .admin {
   min-height: 100%;
-  //   height: max-content;
+  height: max-content;
   color: black;
 
   &__container {
@@ -8,7 +8,14 @@
     flex-flow: column;
     align-items: center;
     justify-content: center;
-    height: 100vh;
+
+    @media (max-width: 576px) {
+      height: 200vh;
+    }
+
+    @media (min-width: 768px) {
+      height: 150vh;
+    }
     // border: 1px solid red;
   }
 
@@ -30,31 +37,50 @@
   }
 
   &__save-changes {
-    font-size: 2rem;
     display: flex;
     flex-flow: column;
     align-items: center;
     justify-content: center;
     height: 100%;
     width: 100%;
-    border-radius: 1rem;
+    border-radius: 0.5rem;
     // box-shadow: 0 12px 20px -10px rgba(202, 153, 50, 0.28),
     //   0 4px 20px 0px rgba(0, 0, 0, 0.12), 0 7px 8px -5px rgba(202, 153, 50, 0.2);
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
   }
 
   &__changes-button {
-    padding: 1.5rem;
-    font-size: 1.5rem;
     font-weight: 400;
     font-family: 'Roboto Slab', serif !important;
     text-transform: uppercase;
     color: white;
-    border-radius: 3rem;
+    border-radius: 2rem;
     box-shadow: 0 12px 20px -10px rgba(202, 153, 50, 0.28),
       0 4px 20px 0px rgba(0, 0, 0, 0.12), 0 7px 8px -5px rgba(202, 153, 50, 0.2);
     background-color: $primary;
     transition: all 0.5s ease;
+
+    @media (max-width: 576px) {
+      margin: 0.5rem 0rem;
+      padding: 0.6rem;
+      font-size: 0.6rem;
+    }
+
+    @media (min-width: 576px) {
+      margin: 0.5rem 0rem;
+      padding: 0.6rem;
+      font-size: 0.6rem;
+    }
+
+    @media (min-width: 768px) {
+      padding: 0.8rem;
+      font-size: 0.8rem;
+    }
+
+    @media (min-width: 992px) {
+      padding: 1rem;
+      font-size: 1rem;
+    }
 
     &:hover {
       cursor: pointer;
@@ -79,9 +105,9 @@
     align-items: center;
     justify-content: flex-start;
     width: 90%;
-    height: 5rem;
+    height: 4rem;
     margin: 1rem 1rem;
-    border-radius: 0.5rem;
+    border-radius: 0.2rem;
     // box-shadow: 0 12px 20px -10px rgba(202, 153, 50, 0.28),
     //   0 4px 20px 0px rgba(0, 0, 0, 0.12), 0 7px 8px -5px rgba(202, 153, 50, 0.2);
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
@@ -89,22 +115,46 @@
 
   &__dropdown--title {
     text-align: center;
-    width: 10rem;
-    padding: 1rem;
+    min-width: 5rem;
+    padding: 0.5rem;
     color: white;
     margin: 0rem 1rem;
-    font-size: 1.5rem;
-    font-weight: 500;
+    font-size: 1rem;
+    font-weight: 400;
     font-family: 'Roboto Slab', serif !important;
-    border-radius: 0.5rem;
+    border-radius: 0.2rem;
     transform: translateX(-3rem);
     background: linear-gradient(60deg, #ffca67, #956b00);
   }
 
-  &__dropdown {
-    font-size: 2rem;
+  &__dropdown--form-control {
+    width: 90%;
+  }
+
+  &__dropdown--select {
+    width: 80%;
+  }
+
+  &__select-button {
     width: 100%;
-    border: 1px solid black;
+    @media (max-width: 576px) {
+      margin: 0.5rem 0rem;
+      padding: 0.6rem;
+      font-size: 0.6rem;
+    }
+
+    @media (min-width: 576px) {
+      padding: 0.6rem;
+      font-size: 0.6rem;
+    }
+
+    @media (min-width: 768px) {
+      margin-left: -2rem;
+    }
+
+    @media (min-width: 992px) {
+      margin-left: 0rem;
+    }
   }
 
   &__column--right {
@@ -122,24 +172,92 @@
     flex-flow: column;
     align-items: center;
     justify-content: center;
-    border-radius: 1rem;
+    border-radius: 0.5rem;
     // box-shadow: 0 12px 20px -10px rgba(202, 153, 50, 0.28),
     //   0 4px 20px 0px rgba(0, 0, 0, 0.12), 0 7px 8px -5px rgba(202, 153, 50, 0.2);
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
   }
 
   &__upload-button {
-    padding: 1.5rem;
-    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    // padding: 1rem;
+    // font-size: 1rem;
     font-weight: 400;
     font-family: 'Roboto Slab', serif !important;
     text-transform: uppercase;
     color: white;
-    border-radius: 3rem;
+    border-radius: 2rem;
     box-shadow: 0 12px 20px -10px rgba(202, 153, 50, 0.28),
       0 4px 20px 0px rgba(0, 0, 0, 0.12), 0 7px 8px -5px rgba(202, 153, 50, 0.2);
     background-color: $primary;
     transition: all 0.5s ease;
+
+    @media (max-width: 576px) {
+      margin: 0.5rem 0rem;
+      padding: 0.6rem;
+      font-size: 0.6rem;
+    }
+
+    @media (min-width: 576px) {
+      margin: 0.5rem 0rem;
+      padding: 0.6rem;
+      font-size: 0.6rem;
+    }
+
+    @media (min-width: 768px) {
+      padding: 0.8rem;
+      font-size: 0.8rem;
+    }
+
+    @media (min-width: 992px) {
+      padding: 1rem;
+      font-size: 1rem;
+    }
+
+    &:hover {
+      cursor: pointer;
+      transition: all 0.5s ease;
+      box-shadow: 0 12px 20px -10px rgba(202, 153, 50, 0.28),
+        0 10px 30px 0px rgba(0, 0, 0, 0.12),
+        0 20px 15px -5px rgba(202, 153, 50, 0.4);
+    }
+  }
+
+  &__property-button {
+    margin-bottom: 1rem;
+    padding: 1rem;
+    font-size: 1rem;
+    font-weight: 400;
+    font-family: 'Roboto Slab', serif !important;
+    text-transform: uppercase;
+    color: white;
+    border-radius: 2rem;
+    box-shadow: 0 12px 20px -10px rgba(202, 153, 50, 0.28),
+      0 4px 20px 0px rgba(0, 0, 0, 0.12), 0 7px 8px -5px rgba(202, 153, 50, 0.2);
+    background-color: $primary;
+    transition: all 0.5s ease;
+
+    @media (max-width: 576px) {
+      margin: 0.5rem 0rem;
+      padding: 0.6rem;
+      font-size: 0.6rem;
+    }
+
+    @media (min-width: 576px) {
+      margin: 0.5rem 0rem;
+      padding: 0.6rem;
+      font-size: 0.6rem;
+    }
+
+    @media (min-width: 768px) {
+      padding: 0.8rem;
+      font-size: 0.8rem;
+    }
+
+    @media (min-width: 992px) {
+      padding: 1rem;
+      font-size: 1rem;
+    }
 
     &:hover {
       cursor: pointer;
@@ -166,22 +284,39 @@
 
   &__gallery--wrapper {
     // margin-right: 1rem;
-    font-size: 2rem;
-    height: 100%;
+    font-size: 1rem;
+
     // border: 1px solid red;
     display: flex;
     flex-flow: column;
     align-items: center;
     justify-content: center;
-    border-radius: 1rem;
+    border-radius: 0.5rem;
     // box-shadow: 0 12px 20px -10px rgba(202, 153, 50, 0.28),
     //   0 4px 20px 0px rgba(0, 0, 0, 0.12), 0 7px 8px -5px rgba(202, 153, 50, 0.2);
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
     // border: 1px solid lime;
+
+    @media (max-width: 576px) {
+      height: 50vh;
+    }
+
+    @media (min-width: 576px) {
+      height: 50vh;
+    }
+
+    @media (min-width: 768px) {
+      height: 100%;
+    }
   }
 
   &__column__lower--right {
     // border: 1px solid lime;
+
+    @media (max-width: 768px) {
+      margin-top: 0.5rem;
+      height: 50vh;
+    }
   }
 
   &__property__form--wrapper {
@@ -190,15 +325,15 @@
     flex-flow: column;
     align-items: center;
     justify-content: space-around;
-    border-radius: 1rem;
+    border-radius: 0.5rem;
     // box-shadow: 0 12px 20px -10px rgba(202, 153, 50, 0.28),
     //   0 4px 20px 0px rgba(0, 0, 0, 0.12), 0 7px 8px -5px rgba(202, 153, 50, 0.2);
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
   }
 
   &__default-image {
-    margin-top: 2rem;
-    font-size: 2rem;
+    margin-top: 1rem;
+    font-size: 1rem;
     display: flex;
     flex-flow: column;
     align-items: center;
@@ -206,11 +341,12 @@
     height: 40%;
     width: 80%;
     // border: 1px solid $primary;
-    border-radius: 1rem;
+    border-radius: 0.2rem;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
   }
 
   &__form {
+    margin-top: 0.5rem;
     display: flex;
     flex-flow: column;
     align-items: center;
@@ -219,11 +355,11 @@
   }
 
   &__input {
-    font-size: 1.5rem;
+    font-size: 1rem;
     font-weight: 300;
     font-family: 'Roboto Slab', serif !important;
     width: 80%;
-    border-radius: 0.5rem;
+    border-radius: 0.2rem;
     margin: 0.5rem 0rem;
     padding: 1rem;
     border: 1px solid $primary;
@@ -240,18 +376,38 @@
   }
 
   &__default-button {
-    margin-bottom: 2rem;
-    padding: 1.5rem;
-    font-size: 1.5rem;
+    margin-bottom: 1rem;
     font-weight: 400;
     font-family: 'Roboto Slab', serif !important;
     text-transform: uppercase;
     color: white;
-    border-radius: 3rem;
+    border-radius: 2rem;
     box-shadow: 0 12px 20px -10px rgba(202, 153, 50, 0.28),
       0 4px 20px 0px rgba(0, 0, 0, 0.12), 0 7px 8px -5px rgba(202, 153, 50, 0.2);
     background-color: $primary;
     transition: all 0.5s ease;
+
+    @media (max-width: 576px) {
+      margin: 0.5rem 0rem;
+      padding: 0.6rem;
+      font-size: 0.6rem;
+    }
+
+    @media (min-width: 576px) {
+      margin: 0.5rem 0rem;
+      padding: 0.6rem;
+      font-size: 0.6rem;
+    }
+
+    @media (min-width: 768px) {
+      padding: 0.8rem;
+      font-size: 0.8rem;
+    }
+
+    @media (min-width: 992px) {
+      padding: 1rem;
+      font-size: 1rem;
+    }
 
     &:hover {
       cursor: pointer;

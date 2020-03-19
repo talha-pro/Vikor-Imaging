@@ -8,8 +8,7 @@
 
 html,
 body {
-  font-size: 62.5%;
-  font-family: 'Poppins' !important;
+  font-size: 100%;
   box-sizing: border-box;
 }
 
@@ -33,70 +32,12 @@ body {
   width: 100%;
 }
 
-// h1 {
-//   font-weight: 700 !important;
+.title {
+  color: white;
+  font-family: 'Roboto Slab', serif !important;
+  font-weight: 700;
+}
 
-//   color: $secondary-low !important;
-
-//   @media (max-width: 576px) {
-//     font-size: 3.6rem !important;
-//     line-height: 5rem !important;
-//   }
-
-//   @media (min-width: 576px) {
-//     font-size: 3.6rem !important;
-//     line-height: 5rem !important;
-//   }
-
-//   @media (min-width: 768px) {
-//     font-size: 5.4rem !important;
-//     line-height: 6rem !important;
-//   }
-// }
-
-// h2 {
-//   font-size: 3.6rem !important;
-//   font-weight: 700 !important;
-//   line-height: 4rem !important;
-//   color: $secondary-low !important;
-
-//   @media (max-width: 576px) {
-//     text-align: center !important;
-//   }
-
-//   @media (min-width: 576px) {
-//     text-align: center !important;
-//   }
-
-//   @media (min-width: 768px) {
-//     text-align: left !important;
-//   }
-// }
-
-// h3 {
-//   font-family: "Open Sans" !important;
-//   font-size: 1.4rem !important;
-//   font-weight: 700 !important;
-//   line-height: 4rem !important;
-//   color: $accent-one !important;
-// }
-
-// p {
-//   font-family: "Open Sans" !important;
-//   font-size: 1.8rem !important;
-//   font-weight: 400 !important;
-//   line-height: 2.4rem !important;
-//   color: $secondary-low !important;
-
-//   @media (max-width: 576px) {
-//     text-align: center !important;
-//   }
-
-//   @media (min-width: 576px) {
-//     text-align: center !important;
-//   }
-
-//   @media (min-width: 768px) {
-//     text-align: left !important;
-//   }
-// }
+.parallax {
+  margin-top: -4rem;
+}

@@ -1,0 +1,125 @@
+.properties {
+  margin: 1rem 0rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  //   width: 100%;
+  margin: auto;
+  // border: 1px solid red;
+
+  @media (max-width: 576px) {
+    flex-flow: column;
+  }
+
+  @media (min-width: 576px) {
+    flex-flow: row wrap;
+  }
+}
+
+.admin-button-wrapper {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+}
+
+.admin-panel-button {
+  margin-bottom: 1rem;
+  padding: 1rem;
+  width: max-content;
+  font-size: 0.8rem;
+  font-weight: 400;
+  font-family: 'Roboto', sans-serif !important;
+  // font-family: 'Roboto Slab', serif !important;
+  text-transform: uppercase;
+  color: white;
+  border-radius: 2rem;
+  box-shadow: 0 12px 20px -10px rgba(202, 153, 50, 0.28),
+    0 4px 20px 0px rgba(0, 0, 0, 0.12), 0 7px 8px -5px rgba(202, 153, 50, 0.2);
+  background-color: $primary;
+  transition: all 0.5s ease;
+
+  &:hover {
+    cursor: pointer;
+    transition: all 0.5s ease;
+    box-shadow: 0 12px 20px -10px rgba(202, 153, 50, 0.28),
+      0 10px 15px 0px rgba(0, 0, 0, 0.12),
+      0 15px 15px -5px rgba(202, 153, 50, 0.4);
+  }
+}
+
+.tile {
+  position: relative;
+  margin-top: 2rem;
+  margin-bottom: 4rem;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2),
+    0 1px 5px 0 rgba(0, 0, 0, 0.12);
+
+  &__image-primary {
+    z-index: 2;
+    position: relative;
+    border-radius: 0.5rem;
+    transform: translateY(-3rem);
+    // border: 1px solid $primary;
+    transition: 0.3s ease;
+
+    @media (max-width: 576px) {
+      width: 220px;
+      height: 200px;
+    }
+
+    @media (min-width: 576px) {
+      width: 220px;
+      height: 200px;
+    }
+
+    @media (min-width: 768px) {
+      width: 270px;
+      height: 200px;
+    }
+
+    &:hover {
+      transition: 0.3s ease;
+      transform: translateY(-3.3rem);
+    }
+  }
+
+  &__image-secondary {
+    z-index: 1;
+    position: absolute;
+    filter: blur(0.8rem);
+    top: -8%;
+    right: 6%;
+
+    @media (max-width: 576px) {
+      width: 215px;
+      height: 200px;
+    }
+
+    @media (min-width: 576px) {
+      width: 215px;
+      height: 200px;
+    }
+
+    @media (min-width: 768px) {
+      width: 265px;
+      height: 200px;
+    }
+  }
+
+  &__address {
+    font-family: 'Roboto Slab', serif !important;
+    font-size: 1rem;
+    font-weight: 700;
+    margin-top: -1rem;
+    color: rgba(0, 0, 0, 0.6);
+    text-align: center;
+    transition: 0.5s ease;
+
+    &:hover {
+      transition: 0.5s ease;
+      color: $primary;
+    }
+  }
+}
