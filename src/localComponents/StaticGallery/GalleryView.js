@@ -280,16 +280,19 @@ export default function GalleryView({ ...rest }) {
       </div>
 
       <div className={classNames(classes.main, classes.mainRaised)}>
-        <h3>Virtual Tour with Floorplan Navigation</h3>
-        <Container className="d-flex flex-column align-items-center">
-          <a href="https://fileshare-vikor.s3.us-east-2.amazonaws.com/iguide/index.html">
-            Click Here!
-          </a>
-
-          <h3>Sample Property Images</h3>
-        </Container>
-
         <Container>
+          <div className="virtual-tour">
+            <h3 className="virtual-tour__heading">
+              Virtual Tour with Floorplan Navigation
+            </h3>
+            <a
+              className="virtual-tour__link"
+              href="https://fileshare-vikor.s3.us-east-2.amazonaws.com/iguide/index.html"
+            >
+              Click Here
+            </a>
+            <h3 className="virtual-tour__subheading">Sample Property Images</h3>
+          </div>
           <ImageGallery
             additionalClass="image-gallery"
             items={images.map(image => {
@@ -320,7 +323,7 @@ export default function GalleryView({ ...rest }) {
             }}
           />
         </Container>
-        {/* <Container>
+        <Container>
           <ImageGallery
             additionalClass="image-gallery"
             items={images2.map(image => {
@@ -400,11 +403,10 @@ export default function GalleryView({ ...rest }) {
               )
             }}
           />
-        </Container> */}
-
-        <h3>Sample Panoramic Resources</h3>
+        </Container>
 
         <Container className="panoramic__container">
+          <h3>Sample Panoramic Resources</h3>
           <Row>
             <section className="panoramic">
               <a
