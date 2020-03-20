@@ -296,6 +296,7 @@ export default function GalleryView({ ...rest }) {
         <Container>
           {/* <Row> */}
           <ImageGallery
+            additionalClass="image-gallery"
             items={images.map(image => {
               return {
                 original: image.original,
@@ -304,30 +305,34 @@ export default function GalleryView({ ...rest }) {
                 thumbnailClass: 'thumbnail',
               }
             })}
-            showNav={true}
+            preventDefaultTouchmoveEvent={true}
+            // showNav={true}
+            disableKeyDown={true}
             showFullscreenButton={false}
             showPlayButton={false}
             renderLeftNav={(onClick, disabled) => {
               return (
-                <button
-                  style={{ border: '1px solid red', width: 80, height: 80 }}
-                  className="left-nav"
+                <div
+                  className="nav-arrow-left"
                   // disabled={disabled}
                   onClick={onClick}
-                />
+                >
+                  &lsaquo;
+                </div>
               )
             }}
             renderRightNav={(onClick, disabled) => {
               return (
-                <button
-                  style={{ border: '1px solid red', width: 80, height: 80 }}
-                  className="left-nav"
+                <div
+                  className="nav-arrow-right"
                   // disabled={disabled}
                   onClick={onClick}
-                />
+                >
+                  &rsaquo;
+                </div>
               )
             }}
-            additionalClass="image-gallery"
+
             // disableThumbnailScroll={true}
             // showBullets={true}
           />

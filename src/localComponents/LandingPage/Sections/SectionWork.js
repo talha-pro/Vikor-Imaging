@@ -25,7 +25,7 @@ export default function SectionWork() {
     axios.post('https://bookryt.herokuapp.com/email', {
       subject: name + ' ' + email,
       body: message,
-      to: 'salman292013@gmail.com',
+      to: 'mail.talha.pro@gmail.com',
     })
   }
   return (
