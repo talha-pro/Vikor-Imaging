@@ -99,7 +99,7 @@ export default function LandingPage({ ...rest }) {
               <a href="/" target="_blank">
                 Vikor Imaging
               </a>
-              All Rights Reserved
+              &nbsp;All Rights Reserved
             </div>
           </div>
         }

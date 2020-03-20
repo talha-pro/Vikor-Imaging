@@ -1,6 +1,8 @@
 /*eslint-disable*/
 import React from 'react'
 import { Link } from 'gatsby'
+import Container from 'react-bootstrap/Container'
+import Row from 'react-bootstrap/Row'
 
 // nodejs library that concatenates classes
 import classNames from 'classnames'
@@ -32,6 +34,7 @@ import Button from 'components/CustomButtons/Button.js'
 import sampleImage from 'assets/img/faces/christian.jpg'
 import { navigate } from '@reach/router'
 import profilePageStyle from 'assets/jss/material-kit-pro-react/views/profilePageStyle.js'
+import landingPageStyle from 'assets/jss/material-kit-pro-react/views/landingPageStyle.js'
 import Admin from '../Admin'
 import logo from '../../images/logo_name.png'
 // import Masonry, { Tile } from './Masonry'
@@ -48,7 +51,8 @@ for (let i = 0; i < imgId.length; i++) {
   images.push('https://unsplash.it/250/' + ih + '?image=' + imgId[i])
 }
 
-const useStyles = makeStyles(profilePageStyle)
+// const useStyles = makeStyles(profilePageStyle)
+const useStyles = makeStyles(landingPageStyle)
 
 export default function ProfilePage({ data, ...rest }) {
   React.useEffect(() => {
@@ -73,27 +77,30 @@ export default function ProfilePage({ data, ...rest }) {
         {...rest}
       /> */}
       <div className="parallax">
-        <Parallax
-          //image={require('assets/img/examples/city.jpg')}
-          filter="dark"
-          className={classes.parallax}
-        />
+        <Parallax image={require('assets/img/bglake.jpg')} filter="dark">
+          <div className={classes.container}>
+            <GridContainer justify="center">
+              <GridItem xs={12} sm={6} md={6}>
+                <h2 className="title">Hello {user.username}!</h2>
+              </GridItem>
+            </GridContainer>
+          </div>
+        </Parallax>
       </div>
-      <div className={classNames(classes.main, classes.mainRaised)}>
-        <div className={classes.container}>
-          <GridContainer justify="center">
-            <GridItem xs={12} sm={12} md={6}>
-              <div className={classes.profile}>
-                <div>
-                  {/* <img src={sampleImage} alt="..." className={imageClasses} /> */}
-                  {/* <People classes={imageClasses} size={100} /> */}
-                </div>
-                <div className={classes.name}>
-                  <h2 className={classes.title}>Hello {user.username}!</h2>
-                </div>
-              </div>
-              <div className={classes.follow}>
-                {/* <Tooltip
+
+      {/* <GridContainer justify="center"> */}
+      {/* <GridItem xs={12} sm={12} md={6}> */}
+      {/* <div className={classes.profile}> */}
+      {/* <div> */}
+      {/* <img src={sampleImage} alt="..." className={imageClasses} /> */}
+      {/* <People classes={imageClasses} size={100} /> */}
+      {/* </div> */}
+      {/* <div className={classes.name}> */}
+      {/* <h2 className={classes.title}>Hello {user.username}!</h2> */}
+      {/* </div> */}
+      {/* </div> */}
+      {/* <div className={classes.follow}> */}
+      {/* <Tooltip
                   id="tooltip-top"
                   title="User settings"
                   placement="top"
@@ -108,17 +115,25 @@ export default function ProfilePage({ data, ...rest }) {
                     <SettingsIcon className={classes.followIcon} />
                   </Button>
                 </Tooltip> */}
-              </div>
-            </GridItem>
-          </GridContainer>
-          <div className={classNames(classes.textCenter)}>
-            <Link to="/app/admin">
-              <div className="admin-button-wrapper">
-                <div className="admin-panel-button">Admin Panel</div>
-              </div>
-            </Link>
-            <h4>Property List</h4>
-          </div>
+      {/* </div> */}
+      {/* </GridItem> */}
+      {/* </GridContainer> */}
+
+      <div className={classNames(classes.main, classes.mainRaised)}>
+        {/* <div className={classes.container}> */}
+        <Container className="d-flex flex-column align-items-center">
+          <Row>
+            <div className={classNames(classes.textCenter)}>
+              <Link to="/app/admin">
+                <div className="admin-button-wrapper">
+                  <div className="admin-panel-button">Admin Panel</div>
+                </div>
+              </Link>
+              <h4 className="heading">Property List</h4>
+            </div>
+          </Row>
+        </Container>
+        <Container>
           {/* <Masonry brakePoints={[350, 500, 750]}> */}
           <div className="properties">
             {data.map(item => {
@@ -162,7 +177,8 @@ export default function ProfilePage({ data, ...rest }) {
           </div>
           {/* </Masonry> */}
           {/* <Clearfix /> */}
-        </div>
+          {/* </div> */}
+        </Container>
       </div>
       <Footer
         content={

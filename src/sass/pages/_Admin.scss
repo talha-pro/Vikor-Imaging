@@ -16,7 +16,6 @@
     @media (min-width: 768px) {
       height: 150vh;
     }
-    // border: 1px solid red;
   }
 
   &__row--upper {
@@ -25,7 +24,6 @@
     width: 100%;
     height: 50%;
     border-radius: 1rem;
-    // border: 1px solid blue;
   }
 
   &__column--left {
@@ -33,7 +31,6 @@
     flex-flow: column;
     align-items: center;
     justify-content: center;
-    // border: 1px solid lime;
   }
 
   &__save-changes {
@@ -44,8 +41,6 @@
     height: 100%;
     width: 100%;
     border-radius: 0.5rem;
-    // box-shadow: 0 12px 20px -10px rgba(202, 153, 50, 0.28),
-    //   0 4px 20px 0px rgba(0, 0, 0, 0.12), 0 7px 8px -5px rgba(202, 153, 50, 0.2);
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
   }
 
@@ -96,7 +91,6 @@
     flex-flow: column;
     align-items: center;
     justify-content: center;
-    // border: 1px solid lime;
   }
 
   &__dropdown--wrapper {
@@ -108,8 +102,6 @@
     height: 4rem;
     margin: 1rem 1rem;
     border-radius: 0.2rem;
-    // box-shadow: 0 12px 20px -10px rgba(202, 153, 50, 0.28),
-    //   0 4px 20px 0px rgba(0, 0, 0, 0.12), 0 7px 8px -5px rgba(202, 153, 50, 0.2);
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
   }
 
@@ -162,7 +154,6 @@
     flex-flow: column;
     align-items: center;
     justify-content: center;
-    // border: 1px solid lime;
   }
 
   &__upload {
@@ -173,15 +164,11 @@
     align-items: center;
     justify-content: center;
     border-radius: 0.5rem;
-    // box-shadow: 0 12px 20px -10px rgba(202, 153, 50, 0.28),
-    //   0 4px 20px 0px rgba(0, 0, 0, 0.12), 0 7px 8px -5px rgba(202, 153, 50, 0.2);
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
   }
 
   &__upload-button {
     margin-bottom: 1rem;
-    // padding: 1rem;
-    // font-size: 1rem;
     font-weight: 400;
     font-family: 'Roboto Slab', serif !important;
     text-transform: uppercase;
@@ -269,17 +256,9 @@
   }
 
   &__row--lower {
-    // display: flex;
-    // flex-flow: row;
-    // justify-content: space-between;
     margin-bottom: 5rem;
     width: 100%;
     height: 100%;
-
-    // border: 1px solid blue;
-  }
-
-  &__column__lower--left {
   }
 
   &__gallery--wrapper {
@@ -348,7 +327,6 @@
     justify-content: center;
     height: 40%;
     width: 80%;
-    // border: 1px solid $primary;
     border-radius: 0.2rem;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
   }
@@ -380,7 +358,6 @@
     align-items: center;
     justify-content: center;
     width: 100%;
-    // border: 1px solid red;
   }
 
   &__default-button {

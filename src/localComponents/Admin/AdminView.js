@@ -36,8 +36,6 @@ const AdminView = ({ ...rest }) => {
   const [imagePreviewUrl, setImagePreviewUrl] = React.useState([])
 
   const imageUpload = e => {
-    // console.log(e.target.value, 'ss')
-    // console.log(e.target.files, 'ss')
     let reader = new FileReader()
     let file = e.target.files[0]
     reader.onloadend = () => {
@@ -187,7 +185,6 @@ const AdminView = ({ ...rest }) => {
             </Row>
           </Container>
         </section>
-        {/* </div> */}
       </div>
 
       <Footer
