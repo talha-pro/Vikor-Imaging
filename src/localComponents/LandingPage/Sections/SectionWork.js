@@ -22,11 +22,17 @@ export default function SectionWork() {
   const [message, setMessage] = React.useState()
   const classes = useStyles()
   const submit = () => {
-    axios.post('https://bookryt.herokuapp.com/email', {
-      subject: name + ' ' + email,
-      body: message,
-      to: 'salman292013@gmail.com',
-    })
+    axios
+      .post('https://bookryt.herokuapp.com/email', {
+        subject: name + ' ' + email,
+        body: message,
+        to: 'salman292013@gmail.com',
+      })
+      .then(res => {
+        setName('')
+        setEmail('')
+        setMessage('')
+      })
   }
   return (
     <div className={classes.section} id="work">
