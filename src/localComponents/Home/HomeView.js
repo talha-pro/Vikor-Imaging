@@ -128,8 +128,6 @@ export default function ProfilePage({ data, ...rest }) {
                     <div className="tile">
                       <img
                         className="tile__image-primary"
-                        // width={270}
-                        // height={200}
                         src={
                           item.photos.items.length
                             ? item.photos.items[0].fullsize
@@ -138,8 +136,6 @@ export default function ProfilePage({ data, ...rest }) {
                       />
                       <img
                         className="tile__image-secondary"
-                        // width={265}
-                        // height={200}
                         src={
                           item.photos.items.length
                             ? item.photos.items[0].fullsize

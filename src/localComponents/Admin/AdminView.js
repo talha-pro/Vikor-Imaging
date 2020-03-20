@@ -49,12 +49,12 @@ const AdminView = ({ ...rest }) => {
   const classes = useStyles()
   return (
     <>
-      <Header
+      {/* <Header
         brand={<img src={logo} alt="Vikor Imaging" />}
         links={<HeaderLinks dropdownHoverColor="primary" />}
         // absolute
         {...rest}
-      />
+      /> */}
       <div className="parallax">
         <Parallax image={require('assets/img/bglake.jpg')} filter="dark">
           <div className={classes.container}>
@@ -67,7 +67,6 @@ const AdminView = ({ ...rest }) => {
         </Parallax>
       </div>
       <div className={classNames(classes.main, classes.mainRaised)}>
-        {/* <div className={classes.container}> */}
         <section className="admin">
           <Container fluid={true} className="admin__container">
             <Row className="admin__row--upper">
@@ -85,7 +84,6 @@ const AdminView = ({ ...rest }) => {
               >
                 <div className="admin__dropdown--wrapper">
                   <div className="admin__dropdown--title">Owner</div>
-                  {/* <div className="admin__dropdown"> */}
                   <FormControl className="admin__dropdown--form-control">
                     <Select
                       className="admin__dropdown--select"
@@ -100,11 +98,9 @@ const AdminView = ({ ...rest }) => {
                       <MenuItem value="aaron">Aaron</MenuItem>
                     </Select>
                   </FormControl>
-                  {/* </div> */}
                 </div>
                 <div className="admin__dropdown--wrapper">
                   <div className="admin__dropdown--title">Property</div>
-                  {/* <div className="admin__dropdown"> */}
                   <FormControl className="admin__dropdown--form-control">
                     <Select
                       className="admin__dropdown--select"
@@ -118,7 +114,6 @@ const AdminView = ({ ...rest }) => {
                       <MenuItem value="shop">Shop</MenuItem>
                     </Select>
                   </FormControl>
-                  {/* </div> */}
                 </div>
                 <div className="admin__dropdown--wrapper">
                   <div className="admin__dropdown--title">Select</div>
@@ -153,11 +148,10 @@ const AdminView = ({ ...rest }) => {
                 xl={8}
               >
                 <div className="admin__gallery--wrapper">
-                  Gallery Images Here
                   {imagePreviewUrl &&
                     imagePreviewUrl.length > 0 &&
                     imagePreviewUrl.map(img => {
-                      return <img src={img} />
+                      return <img className="admin__gallery__image" src={img} />
                     })}
                 </div>
               </Col>
