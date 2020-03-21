@@ -20,6 +20,7 @@ import Parallax from 'components/Parallax/Parallax.js'
 
 import landingPageStyle from 'assets/jss/material-kit-pro-react/views/landingPageStyle.js'
 import logo from '../../images/logo_name.png'
+import { ConfirmProvider } from 'material-ui-confirm'
 
 // Sections for this page
 import SectionProduct from './Sections/SectionProduct.js'
@@ -73,8 +74,9 @@ export default function LandingPage({ ...rest }) {
             ></img>
           </GridContainer>
           <SectionTeam />
-
-          <SectionWork />
+          <ConfirmProvider>
+            <SectionWork />
+          </ConfirmProvider>
         </div>
       </div>
       <Footer

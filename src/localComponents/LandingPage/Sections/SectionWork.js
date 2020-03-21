@@ -3,9 +3,8 @@ import React, { useEffect } from 'react'
 // @material-ui/core components
 import { makeStyles } from '@material-ui/core/styles'
 import axios from 'axios'
-
 // @material-ui/icons
-
+import { useConfirm } from 'material-ui-confirm'
 // core components
 import GridContainer from 'components/Grid/GridContainer.js'
 import GridItem from 'components/Grid/GridItem.js'
@@ -17,22 +16,32 @@ import workStyle from 'assets/jss/material-kit-pro-react/views/landingPageSectio
 const useStyles = makeStyles(workStyle)
 
 export default function SectionWork() {
-  const [name, setName] = React.useState()
-  const [email, setEmail] = React.useState()
-  const [message, setMessage] = React.useState()
+  const [name, setName] = React.useState('')
+  const [email, setEmail] = React.useState('')
+  const [message, setMessage] = React.useState('')
   const classes = useStyles()
+  const confirm = useConfirm()
   const submit = () => {
-    axios
-      .post('https://bookryt.herokuapp.com/email', {
-        subject: name + ' ' + email,
-        body: message,
-        to: 'mail.talha.pro@gmail.com',
+    if (name && email && message !== '') {
+      confirm({
+        title: 'Your message is about to be sent to support',
+        description: 'Thankyou for reaching out to Vikor-Imaging',
+      }).then(() => {
+        axios
+          .post('https://bookryt.herokuapp.com/email', {
+            subject: name + ' ' + email,
+            body: message,
+            to: 'salman292013@gmail.com',
+          })
+          .then(res => {
+            setName('')
+            setEmail('')
+            setMessage('')
+          })
       })
-      .then(res => {
-        setName('')
-        setEmail('')
-        setMessage('')
-      })
+    } else {
+      alert('Please fill all fields')
+    }
   }
   return (
     <div className={classes.section} id="work">

@@ -33,17 +33,22 @@ const AdminView = ({ ...rest }) => {
   const [imagePreviewUrl, setImagePreviewUrl] = React.useState([])
 
   const imageUpload = e => {
-    // console.log(e.target.value, 'ss')
-    // console.log(e.target.files, 'ss')
-    let reader = new FileReader()
-    let file = e.target.files[0]
-    reader.onloadend = () => {
-      setFile(file)
-      setImagePreviewUrl([...imagePreviewUrl, reader.result])
+    var count = 0
+    let images = []
+    while (count < 2) {
+      const reader = new FileReader()
+      const file = e.target.files[count]
+      // console.log(file, 'sss')
+      reader.onloadend = () => {
+        images[count] = reader.result
+        setFile(file)
+      }
+      // setImagePreviewUrl([...imagePreviewUrl, reader.result])
+      reader.readAsDataURL(file)
+      count++
     }
-    reader.readAsDataURL(file)
+    setImagePreviewUrl(images)
   }
-  console.log(file, 'ff')
   console.log(imagePreviewUrl, 'img')
 
   const classes = useStyles()
