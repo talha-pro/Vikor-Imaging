@@ -22,6 +22,9 @@ import InputLabel from '@material-ui/core/InputLabel'
 import MenuItem from '@material-ui/core/MenuItem'
 import FormHelperText from '@material-ui/core/FormHelperText'
 import FormControl from '@material-ui/core/FormControl'
+import { logout, getCurrentUser } from 'utils/auth'
+import { Auth } from 'aws-amplify'
+import { navigate } from '@reach/router'
 // import CustomDropdown from 'components/CustomDropdown/CustomDropdown'
 
 const useStyles = makeStyles(landingPageStyle)
@@ -33,19 +36,11 @@ const AdminView = ({ ...rest }) => {
   const [imagePreviewUrl, setImagePreviewUrl] = React.useState([])
 
   const imageUpload = e => {
-    var count = 0
-    let images = []
-    while (count < 2) {
-      const reader = new FileReader()
-      const file = e.target.files[count]
-      // console.log(file, 'sss')
-      reader.onloadend = () => {
-        images[count] = reader.result
-        setFile(file)
-      }
-      // setImagePreviewUrl([...imagePreviewUrl, reader.result])
-      reader.readAsDataURL(file)
-      count++
+    let reader = new FileReader()
+    let file = e.target.files[0]
+    reader.onloadend = () => {
+      setFile(file)
+      setImagePreviewUrl([...imagePreviewUrl, reader.result])
     }
     setImagePreviewUrl(images)
   }
@@ -189,7 +184,6 @@ const AdminView = ({ ...rest }) => {
             </Row>
           </Container>
         </section>
-        {/* </div> */}
       </div>
 
       <Footer
@@ -198,23 +192,23 @@ const AdminView = ({ ...rest }) => {
             <div className={classes.left}>
               <List className={classes.list}>
                 <ListItem className={classes.inlineBlock}>
-                  <a
-                    href="https://www.creative-tim.com/license?ref=mkpr-landing"
-                    target="_blank"
-                    className={classes.block}
-                  >
-                    Privacy Policy
+                  <a href="/" target="_blank" className={classes.block}>
+                    <a>Home</a>
                   </a>
                 </ListItem>
               </List>
             </div>
             <div className={classes.right}>
-              &copy; {1900 + new Date().getYear()}, made with{' '}
-              <Favorite className={classes.icon} /> by{' '}
-              <a href="/" target="_blank">
-                Vikor Imaging
-              </a>
-              &nbsp; All Rights Reserved
+              Vikor Imaging
+              <p
+                onClick={() =>
+                  Auth.signOut()
+                    .then(logout(() => navigate('/')))
+                    .catch(err => console.log('eror:', err))
+                }
+              >
+                <a>Sign Out</a>
+              </p>
             </div>
           </div>
         }
