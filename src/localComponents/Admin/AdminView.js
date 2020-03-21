@@ -42,7 +42,7 @@ const AdminView = ({ ...rest }) => {
       setFile(file)
       setImagePreviewUrl([...imagePreviewUrl, reader.result])
     }
-    setImagePreviewUrl(images)
+    reader.readAsDataURL(file)
   }
   console.log(imagePreviewUrl, 'img')
 
@@ -121,7 +121,7 @@ const AdminView = ({ ...rest }) => {
                     className="admin__select-button"
                     type="file"
                     name="image"
-                    multiple="multiple"
+                    // multiple="multiple"
                     onChange={imageUpload}
                   />
                 </div>
